@@ -28,6 +28,7 @@ export class AngularButtonLoaderDirective implements OnInit {
 
         } else {
           this.renderer.removeAttribute(span, 'class');
+          this.subscription.unsubscribe();
         }
       }
     );
