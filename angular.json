@@ -23,7 +23,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "projects/angular-button-loader/src/lib/style/button-loader.min.css"
             ],
             "scripts": [],
             "es5BrowserSupport": true
@@ -124,6 +125,41 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "angularButtonLoader": {
+      "root": "projects/angular-button-loader",
+      "sourceRoot": "projects/angular-button-loader/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/angular-button-loader/tsconfig.lib.json",
+            "project": "projects/angular-button-loader/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/angular-button-loader/src/test.ts",
+            "tsConfig": "projects/angular-button-loader/tsconfig.spec.json",
+            "karmaConfig": "projects/angular-button-loader/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/angular-button-loader/tsconfig.lib.json",
+              "projects/angular-button-loader/tsconfig.spec.json"
+            ],
             "exclude": [
               "**/node_modules/**"
             ]

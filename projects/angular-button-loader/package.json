@@ -1,0 +1,16 @@
+{
+  "name": "angular-button-loader",
+  "version": "1.1.4",
+  "peerDependencies": {
+    "@angular/common": "^4.0.0",
+    "@angular/core": "^4.0.0"
+  },
+  "keywords": [
+    "button loader",
+    "button spinner",
+    "loader",
+    "spinner",
+    "angular button loader",
+    "angular button spinner"
+  ]
+}
